@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_27_231750) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_29_135846) do
   create_table "messages", force: :cascade do |t|
-    t.string "text"
+    t.string "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "room_id"
@@ -20,9 +20,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_231750) do
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "messages", "rooms"
 end
