@@ -3,20 +3,25 @@ class RoomsController < ApplicationController
     @rooms = Room.all
   end
 
+  def new
+    @room = Room.new
+  end
   def create
     room = Room.new(room_params)
     if room.save
-      flash[:notice] = 'Room created!'
+      flash.now[:notice] = 'Room created!'
     else
-      flash[:alert] = room.errors.full_messages
+      flash.now[:alert] = room.errors.full_messages
     end
+    render_flash
   end
 
   def show
     @room = Room.find(params[:id])
-    @messages = @room.messages
+    @messages = @room.messages.sort_by(&:created_at)
   end
 
+  private
   def room_params
     params.require(:room).permit(:name)
   end

@@ -1,3 +1,6 @@
-<% flash.each do |type, msg| %>
-  <%= msg %>
+<%= turbo_stream_from id='flash' %>
+<%= turbo_frame_tag id='flash' do %>
+  <% flash.each do |type, msg| %>
+    <%= msg %>
+  <% end %>
 <% end %>

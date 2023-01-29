@@ -1,13 +1,16 @@
-<h3> Room <%= @room.name %></h3>
+<%= turbo_frame_tag id='room' do %>
+  <h3> Chat <%= @room.name %></h3>
 
-<%= turbo_stream_from 'messages' %>
-<%= turbo_frame_tag 'messages' do%>
-  <%= render partial: 'messages/message', collection: @messages %>
-<% end %>
+  <%= turbo_stream_from 'messages' %>
+  <%= turbo_frame_tag 'messages' do %>
+    <%= render partial: 'messages/message', collection: @messages %>
+    <%= render partial: 'layouts/flash' %>
+  <% end %>
 
-<%= form_with scope: :message, url: messages_path do |f| %>
-  <%= f.label :message %>
-  <%= f.text_field :text %>
-  <%= f.hidden_field :room_id, value: @room.id %>
-  <%= f.submit 'Send' %>
+  <%= form_with scope: :message, url: messages_path, method: 'post' do |f| %>
+    <%= f.label :message%>
+    <%= f.text_field :text%>
+    <%= f.hidden_field :room_id, value: @room.id%>
+    <%= f.submit 'Send' %>
+  <% end %>
 <% end %>

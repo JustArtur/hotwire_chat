@@ -1,0 +1,10 @@
+<%= turbo_frame_tag id="new_room" do %>
+  <p> Create Chat</p>
+  <%= form_with model: @room do |f|  %>
+    <%= f.label :name%>
+    <br>
+    <%= f.text_field :name%>
+    <br>
+  <%= f.submit 'Create'%>
+  <% end %>
+<% end %>

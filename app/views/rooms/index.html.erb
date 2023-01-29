@@ -1,13 +1,13 @@
-<h3> Rooms</h3>
-<%= form_with scope: :room, url: rooms_path, method: 'post' do |f|  %>
-  <%= f.label :name %>
-  <br>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.submit 'Create' %>
-<% end %>
+<h3> Chats </h3>
 
-<%= turbo_stream_from 'rooms' %>
-<%= turbo_frame_tag 'rooms' do%>
-  <%= render @rooms %>
-<% end %>
+<div>
+  <%= turbo_stream_from 'rooms' %>
+  <%= turbo_frame_tag 'rooms' do%>
+    <%= render @rooms %>
+  <% end %>
+</div>
+
+
+<%= turbo_frame_tag id="new_room", src:new_room_path %>
+
+<%= turbo_frame_tag id='room' %>
