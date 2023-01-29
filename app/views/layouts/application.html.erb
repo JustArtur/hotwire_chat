@@ -12,6 +12,8 @@
 
   <body>
   <%= turbo_frame_tag id='flash' %>
+  <%= turbo_stream_from id='notification' %>
+  <%= turbo_frame_tag id='notification'%>
   <%= yield %>
   </body>
 </html>

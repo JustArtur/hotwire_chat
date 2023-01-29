@@ -1,16 +1,9 @@
 class MessagesController < ApplicationController
-  def show
-    @message = Message.find(params[:id])
-  end
-
   def create
     message = Message.new(message_params)
     if message.save
-      flash[:notice] = "#{message.room.name} #{message.text}"
-    else
-      flash.now[:alert] = 'Message not sent!Try again.'
+        message.broadcast_append_to('notification', target: 'notification', partial: 'layouts/notification', locals: {room_name: message.room.name})
     end
-    render_flash
   end
 
   private
