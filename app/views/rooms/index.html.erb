@@ -1,13 +1,16 @@
-<h3> Chats </h3>
-
-<div>
-  <%= turbo_stream_from 'rooms' %>
-  <%= turbo_frame_tag 'rooms' do%>
-    <%= render @rooms %>
-  <% end %>
-</div>
 
 
-<%= turbo_frame_tag id="new_room", src:new_room_path %>
+<%#= turbo_frame_tag id="new_room", src:new_room_path %>
+
+
+<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+  <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50">
+    <p class="self-center text-xl p-2 whitespace-nowrap fond-bold">Chats</p>
+    <%= turbo_stream_from 'rooms' %>
+    <%= turbo_frame_tag 'rooms' do%>
+      <ul class="space-y-2"><%= render @rooms %></ul>
+    <% end %>
+  </div>
+</aside>
 
 <%= turbo_frame_tag id='room' %>

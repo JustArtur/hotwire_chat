@@ -1,1 +1,4 @@
-<p><%= message.created_at.strftime('%b %e %H:%M') %> <%= message.text %></p>
+<div class="w-64 p-2">
+<div class="inline w-24 mb-1"><%= message.created_at.strftime('%b %e %H:%M') %></div>
+<div class="w-32"><%= message.text %></div>
+</div>
