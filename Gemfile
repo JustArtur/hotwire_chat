@@ -73,3 +73,4 @@ end
 
 gem "hotwire-rails", "~> 0.1.3"
 gem "tailwindcss-rails", "~> 2.0"
+gem "devise", "~> 4.9.2"
