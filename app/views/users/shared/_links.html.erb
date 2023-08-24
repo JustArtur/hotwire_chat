@@ -1,5 +1,8 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <p class="text-center text-lg">
+    Already have an account?
+    <%= link_to "Log in", new_session_path(resource_name), class: "font-medium text-indigo-500 underline-offset-4 hover:underline" %><br />
+  </p>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
