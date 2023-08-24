@@ -1,0 +1,14 @@
+= turbo_frame_tag id='room' do 
+  .chat-wrap
+    .messages-wrap
+      = turbo_frame_tag 'messages' do 
+        = turbo_stream_from 'messages' 
+        = render partial: 'messages/message', collection: @messages  
+    
+    .message-form-wrap
+      = simple_form_for :message, url: messages_path, method: "post" , 
+        data: { controller: 'clearform', action: "turbo:submit-end->clearform#clear" },
+        html: { class: 'message-form' }  do |f|
+        = f.text_field :text, placeholder: 'Type your message...', size: '44', class: "message-input"
+        = f.hidden_field :room_id, value: @room.id
+        = f.submit 'Send', class: "btn-indigo"

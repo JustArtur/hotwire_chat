@@ -2,12 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
 
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .btn-indigo {
+    @apply items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white p-2 flex-shrink-0;
+  }
+  .message-input {
+    @apply flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10;
+  }
+  .message-form {
+    @apply flex flex-row items-center rounded-xl;
+  }
+  .message-form-wrap {
+    @apply flex flex-row items-center h-16 rounded-xl bg-white w-full px-4;
+  }
+  .message-wrap {
+    @apply relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl;
+  }
+  .message-avatar {
+    @apply flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0;
+  }
+  .message-box {
+    @apply flex flex-row items-center m-3;
+  }
+  .chat-wrap {
+    @apply flex flex-col flex-auto p-6;
+  }
+  .messages-wrap {
+    @apply flex flex-col flex-auto p-6 overflow-y-auto;
+  }
+  .left-panel-box {
+    @apply flex flex-col min-h-full w-64 left-0 ml-2 mt-2;
+  }
+  .ul-rooms {
+    @apply space-y-2 truncate; 
+  }
+  .li-room {
+    @apply items-center w-32 p-2 font-normal text-gray-900 rounded-lg hover:bg-indigo-50 truncate
+  }
+  .main-content {
+    @apply flex flex-row min-h-full;
   }
 }
-
-*/

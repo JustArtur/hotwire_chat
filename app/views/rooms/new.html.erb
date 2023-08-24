@@ -1,6 +1,0 @@
-<%= turbo_frame_tag id="new_room" do %>
-  <%= form_with model: @room, data: {controller: 'clearform', action: "turbo:submit-end->clearform#clear"} do |f|  %>
-    <%= f.text_field :name, placeholder: 'New chat', size: '14', class: 'rounded-lg'%>
-  <%= f.submit 'Create', class: 'hover:bg-gray-100 py-3 px-2 rounded-lg'%>
-  <% end %>
-<% end %>
