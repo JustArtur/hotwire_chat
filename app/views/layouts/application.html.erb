@@ -14,8 +14,8 @@
 
   <body class="flex min-h-screen max-h-screen overflow-hidden">
     <main class="min-h-full w-full">
+      <%= render partial: "layouts/flash" %>
       <%= render partial: "layouts/header"%>
-      <%= turbo_frame_tag id='flash' %>
       <div class="absolute right-96 top-4">
         <%= turbo_stream_from id='notification' %>
         <%= turbo_frame_tag id='notification' %>

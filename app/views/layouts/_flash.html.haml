@@ -1,0 +1,8 @@
+= turbo_frame_tag id='flash' do
+  - if notice || alert
+    .flash-block{ 'data-controller': "autohide" }
+      - if notice
+        .flash= notice
+      - if alert
+        .flash= alert
+
