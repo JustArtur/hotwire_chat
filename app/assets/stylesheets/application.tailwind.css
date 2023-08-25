@@ -38,7 +38,7 @@
     @apply space-y-2 truncate; 
   }
   .li-room {
-    @apply items-center w-32 p-2 font-normal text-gray-900 rounded-lg hover:bg-indigo-50 truncate
+    @apply items-center w-32 p-2 font-normal text-gray-900 rounded-lg hover:bg-indigo-50 truncate;
   }
   .main-content {
     @apply flex flex-row min-h-full;
