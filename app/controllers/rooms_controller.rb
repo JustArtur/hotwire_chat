@@ -10,11 +10,10 @@ class RoomsController < ApplicationController
   def create
     room = Room.new(room_params)
     if room.save
-      flash.now[:notice] = 'Room created!'
+      set_flash_message :notice, 'Room created!'
     else
-      flash.now[:alert] = room.errors.full_messages
+      set_flash_message :alert, room.errors.full_messages
     end
-    render_flash
   end
 
   def show

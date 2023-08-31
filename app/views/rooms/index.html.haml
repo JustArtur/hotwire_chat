@@ -2,8 +2,9 @@
   .left-panel-box
     = turbo_frame_tag id="new_room", src:new_room_path
     = turbo_stream_from 'rooms'
-    %ul.ul-rooms
+    .left-panel-list
       = turbo_frame_tag 'rooms' do
         = render @rooms
-
-  = turbo_frame_tag id='room'
+  .chat-block 
+    %div.h-full      
+      = turbo_frame_tag id='room'

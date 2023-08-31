@@ -1,4 +1,4 @@
 = turbo_frame_tag id="new_room" do
-  = form_with model: @room, data: {controller: 'clearform', action: "turbo:submit-end->clearform#clear"} do |f| 
+  = form_with model: @room, data: { controller: 'clearform', action: "turbo:submit-end->clearform#clear" } do |f| 
     = f.text_field :name, placeholder: 'New chat', size: '14', class: 'rounded-lg mb-2'
     = f.submit 'Create', class: 'btn-indigo'

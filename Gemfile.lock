@@ -95,6 +95,8 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.12.0)
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     haml (6.1.2)
@@ -242,6 +244,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9.2)
+  font-awesome-rails
   haml
   hotwire-rails (~> 0.1.3)
   importmap-rails
