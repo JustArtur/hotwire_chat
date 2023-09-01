@@ -14,7 +14,7 @@
     @apply h-16 rounded-xl bg-white w-full p-4;
   }
   .message-form{
-    @apply flex flex-row self-end items-center h-full rounded-xl w-full;
+    @apply flex flex-row items-center h-full rounded-xl w-full;
   }
   .message-wrap {
     @apply relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl;
@@ -32,7 +32,7 @@
     @apply flex flex-col h-full bg-blue-50 rounded-lg h-full;
   }
   .messages-wrap {
-    @apply grid grid-cols-12 gap-y-2 overflow-y-auto;
+    @apply h-full grid grid-cols-12 gap-y-2 overflow-y-auto;
   }
   .left-panel-box {
     @apply flex flex-col h-full w-1/6 left-0 ml-2 mt-2;

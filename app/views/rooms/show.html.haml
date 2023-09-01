@@ -1,6 +1,6 @@
 = turbo_frame_tag id='room' do 
   .chat-wrap
-    .messages-wrap
+    .messages-wrap{ 'data-controller': 'autoscroll', id: 'messages' }
       = turbo_frame_tag 'messages' do 
         = turbo_stream_from 'messages' 
         = render partial: 'messages/message', collection: @messages  
