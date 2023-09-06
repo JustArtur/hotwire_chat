@@ -3,6 +3,7 @@
     .messages-wrap{ 'data-controller': 'autoscroll', id: 'messages' }
       = turbo_frame_tag 'messages' do 
         = turbo_stream_from 'messages' 
+        = render partial: 'messages/messages_next_page', locals: { pagy: @pagy }
         = render partial: 'messages/message', collection: @messages  
       
     .message-form-wrap

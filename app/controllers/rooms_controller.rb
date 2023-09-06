@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  include Pagy::Backend
+
   def index
     @rooms = Room.all.order(created_at: :desc)
   end
@@ -18,7 +20,9 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
-    @messages = @room.messages.sort_by(&:created_at)
+    @pagy, @messages = pagy(@room.messages.order(created_at: :desc), items: 20)
+
+    render partial: 'messages/messages_scrollable_list' if params[:page]
   end
 
   private
