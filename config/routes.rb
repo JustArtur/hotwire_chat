@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  mount Filepond::Rails::Engine, at: '/filepond'
+
   root "rooms#index"
 
   devise_for :users, controllers: { sessions: "users/sessions" }
-  
+  resources :users, :only => [:show]
+
   resources :rooms, only: %i[index new create show]
   resources :messages, only: %i[create]
 end

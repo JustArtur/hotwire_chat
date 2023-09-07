@@ -78,3 +78,4 @@ gem "haml"
 gem 'simple_form'
 gem "font-awesome-rails"
 gem "pagy"
+gem 'filepond-rails'
