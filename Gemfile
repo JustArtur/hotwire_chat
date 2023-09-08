@@ -77,3 +77,4 @@ gem "devise", "~> 4.9.2"
 gem "haml"
 gem 'simple_form'
 gem "font-awesome-rails"
+gem "pagy"

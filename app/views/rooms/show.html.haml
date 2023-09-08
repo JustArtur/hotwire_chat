@@ -1,8 +1,9 @@
 = turbo_frame_tag id='room' do 
   .chat-wrap
-    .messages-wrap{ 'data-controller': 'autoscroll', id: 'messages' }
+    .messages-wrap{ 'data-controller': 'autoscroll', id: 'messages-wrap' }
       = turbo_frame_tag 'messages' do 
         = turbo_stream_from 'messages' 
+        = render partial: 'messages/messages_next_page', locals: { pagy: @pagy }
         = render partial: 'messages/message', collection: @messages  
       
     .message-form-wrap

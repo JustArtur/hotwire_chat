@@ -1,0 +1,3 @@
+= turbo_frame_tag  "messages-page-#{@pagy.page}" do 
+    = render partial: 'messages/messages_next_page', locals: { pagy: @pagy }
+    = render partial: 'messages/message', collection: @messages  
