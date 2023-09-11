@@ -1,0 +1,16 @@
+.mx-auto.flex.min-h-screen.w-full.items-center.justify-center.bg-gray-900.text-white
+  .flex.flex-col.space-y-10
+    .text-center.text-4xl.font-medium 
+      Registration
+
+    = form_with(scope: :profile, url: profiles_path, html: {class: "flex w-[30rem] flex-col space-y-5"}) do |f| 
+      .form-input-wrap
+        = f.text_field :first_name, placeholder: 'First name', class: 'form-input'
+
+      .form-input-wrap 
+        = f.text_field :second_name, placeholder: 'Second name', class: 'form-input'
+
+      .form-input-wrap 
+        = f.date_field :birthday, placeholder: 'Birthday', class: 'form-input'
+
+      = f.submit "Sign up", class: 'submit-btn-indigo'
