@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root "rooms#index"
 
   devise_for :users, controllers: { sessions: "users/sessions" }
-  resources :users, :only => [:show]
 
+  resources :profiles, only: %i[show new create]
   resources :rooms, only: %i[index new create show]
   resources :messages, only: %i[create]
 end

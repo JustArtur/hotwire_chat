@@ -1,10 +1,11 @@
-.main-content
-  .left-panel-box
-    = turbo_frame_tag id="new_room", src:new_room_path
-    = turbo_stream_from 'rooms'
-    .left-panel-list
-      = turbo_frame_tag 'rooms' do
-        = render @rooms
-  .chat-block 
-    %div.h-full      
-      = turbo_frame_tag id='room'
+= turbo_frame_tag 'content' do
+  .main-content
+    .left-panel-box
+      = turbo_frame_tag id="new_room", src:new_room_path
+      = turbo_stream_from 'rooms'
+      .left-panel-list
+        = turbo_frame_tag 'rooms' do
+          = render @rooms
+    .chat-block 
+      %div.h-full      
+        = turbo_frame_tag id='room'
