@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { sessions: "users/sessions" }
 
-  resources :profiles, only: %i[show new create]
+  resources :profiles, only: %i[show new create update]
   resources :rooms, only: %i[index new create show]
   resources :messages, only: %i[create]
 end
